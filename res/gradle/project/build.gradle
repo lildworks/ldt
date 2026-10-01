@@ -1,0 +1,18 @@
+task processProjectProperties {
+  def outputDir = file("${buildDir}/generated-resources")
+  outputs.file("${outputDir}/project.properties")
+  doLast {
+    outputDir.mkdirs()
+    def propsFile = new File(outputDir, "project.properties")
+    propsFile.text = ""
+      .concat("project.name=${project.name}\n")
+      .concat("project.version=${project.version}")
+  }
+}
+
+processResources {
+  dependsOn processProjectProperties
+  from("${buildDir}/generated-resources") {
+    include "project.properties"
+  }
+}
