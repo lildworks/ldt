@@ -244,73 +244,30 @@ core() {
 }
 project() {
     if [ "$1" = ".dockerignore" ]; then
-        cp -fv $LDT__ROOT/../res/dockerignore.ldt-tmpl $PWD/.dockerignore
+        cp -fv $LDT__ROOT/../res/docker/.dockerignore $PWD/
         cmd="exit"
     fi
     if [ "$1" = ".gitignore" ]; then
-        if [ -f $PWD/angular.json ]; then
-            cp -fv $LDT__ROOT/../res/gitignore-anguboot.ldt-tmpl $PWD/.gitignore
-        fi
-        if [ -f $PWD/build.gradle ]; then
-            cp -fv $LDT__ROOT/../res/gitignore-springboot.ldt-tmpl $PWD/.gitignore
-        fi
+        cp -fv $LDT__ROOT/../res/git/.gitignore $PWD/
         cmd="exit"
     fi
     if [ "$1" = ".npmignore" ]; then
-        cp -fv $LDT__ROOT/../res/npmignore.ldt-tmpl $PWD/.npmignore
-        cmd="exit"
-    fi
-    if [ "$1" = "changelog.mustache" ]; then
-        mkdir -p $PWD/config/changelog/
-        cp -fv $LDT__ROOT/../res/changelog.mustache.ldt-tmpl $PWD/config/changelog/changelog.mustache
-        cmd="exit"
-    fi
-    if [ "$1" = "checkstyle.xml" ]; then
-        mkdir -p $PWD/config/checkstyle/
-        cp -fv $LDT__ROOT/../res/checkstyle.xml.ldt-tmpl $PWD/config/checkstyle/checkstyle.xml
-        cp -fv $LDT__ROOT/../res/checkstyle-suppressions.xml.ldt-tmpl $PWD/checkstyle/suppressions.xml
+        cp -fv $LDT__ROOT/../res/npm/.npmignore $PWD/
         cmd="exit"
     fi
     if [ "$1" = "Dockerfile" ]; then
         if [ -f $PWD/angular.json ]; then
-            cp -fv $LDT__ROOT/../res/nginx-anguboot.Dockerfile.ldt-tmpl $PWD/Dockerfile
+            cp -fv $LDT__ROOT/../res/dockerfile/anguboot/nginx/stable/Dockerfile $PWD/
         fi
         if [ -f $PWD/build.gradle ]; then
-            cp -fv $LDT__ROOT/../res/jre21-springboot.Dockerfile.ldt-tmpl $PWD/Dockerfile
-        fi
-        cmd="exit"
-    fi
-    if [ "$1" = "LICENSE" ]; then
-        cp -fv $LDT__ROOT/../res/LICENSE.ldt-tmpl $PWD/LICENSE
-        cmd="exit"
-    fi
-    if [ "$1" = "nginx.conf" ]; then
-        if [ -f $PWD/angular.json ]; then
-            mkdir -p $PWD/config/
-            cp -fv $LDT__ROOT/../res/nginx-anguboot.conf.ldt-tmpl $PWD/config/nginx.conf
+            cp -fv $LDT__ROOT/../res/dockerfile/springboot/jre21/Dockerfile $PWD/
         fi
         cmd="exit"
     fi
     if [ "$1" = "proxy-conf.json" ]; then
         if [ -f $PWD/angular.json ]; then
             mkdir -p $PWD/config/proxy/
-            cp -fv $LDT__ROOT/../res/proxy-conf-anguboot.json.example.ldt-tmpl $PWD/config/proxy/proxy-conf.json.example
-        fi
-        cmd="exit"
-    fi
-    if [ "$1" = "README.md" ]; then
-        if [ -f $PWD/angular.json ]; then
-            cp -fv $LDT__ROOT/../res/README-anguboot.md.ldt-tmpl $PWD/README.md
-        fi
-        if [ -f $PWD/build.gradle ]; then
-            cp -fv $LDT__ROOT/../res/README-springboot.md.ldt-tmpl $PWD/README.md
-        fi
-        cmd="exit"
-    fi
-    if [ "$1" = "tsdoc.json" ]; then
-        if [ -f $PWD/angular.json ]; then
-            mkdir -p $PWD/config/
-            cp -fv $LDT__ROOT/../res/tsdoc-anguboot.json.ldt-tmpl $PWD/config/tsdoc.json
+            cp -fv $LDT__ROOT/../res/ng/anguboot/proxy-conf.json.example $PWD/config/proxy/proxy-conf.json
         fi
         cmd="exit"
     fi

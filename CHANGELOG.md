@@ -1,3 +1,6 @@
+# REL: Version bumped to v1.0.1-BETA.261001 (2026-10-01)
+- HOTFIX: Available resources references for project tasks
+
 # REL: Version bumped to v1.0.0-BETA.261001 (2026-10-01)
 - FEAT: .npmignore file created
 - FEAT: AnguBoot nginx html spa nginx.conf file created
