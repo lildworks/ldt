@@ -1,0 +1,12 @@
+jar {
+  exclude "**/application-*.properties"
+}
+
+bootJar {
+  exclude "**/application-*.properties"
+}
+
+bootRun {
+  systemProperties = System.properties
+  mainClass = "${project.mainClass}"
+}
