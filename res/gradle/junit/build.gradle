@@ -1,0 +1,4 @@
+test {
+  outputs.dir file("${buildDir}/generated-snippets")
+  useJUnitPlatform()
+}
