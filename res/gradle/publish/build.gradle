@@ -1,0 +1,57 @@
+apply plugin: "maven-publish"
+apply plugin: "signing"
+apply plugin: "com.gradleup.nmcp"
+
+def repositoryHost = System.getenv("CI_SERVER_HOST")
+def repositoryPath = System.getenv("CI_PROJECT_PATH")
+
+java {
+  withSourcesJar()
+}
+
+publishing {
+  publications {
+    mavenJava(MavenPublication) {
+      from components.java
+      versionMapping {
+        usage("java-api") {
+          fromResolutionOf("runtimeClasspath")
+        }
+        usage("java-runtime") {
+          fromResolutionResult()
+        }
+      }
+      pom {
+        name = "${project.name}"
+        description = "https://${repositoryHost}/${repositoryPath}/-/raw/master/README.md"
+        url = "https://${repositoryHost}/${repositoryPath}"
+        licenses {
+          license {
+            name = "MIT"
+            url = "https://${repositoryHost}/${repositoryPath}/-/raw/master/LICENSE"
+          }
+        }
+        developers {
+          developer {
+            id = System.getenv("MAVEN_CENTRAL_DEVID")
+            name = System.getenv("MAVEN_CENTRAL_NAME")
+            email = System.getenv("MAVEN_CENTRAL_EMAIL")
+          }
+        }
+        scm {
+          connection = "scm:git:git://${repositoryHost}/${repositoryPath}.git"
+          developerConnection = "scm:git:ssh://${repositoryHost}/${repositoryPath}.git"
+          url = "https://${repositoryHost}/${repositoryPath}"
+        }
+      }
+    }
+  }
+}
+
+signing {
+  useInMemoryPgpKeys(
+    System.getenv("MAVEN_CENTRAL_GPG_PRIVATE_KEY"),
+    System.getenv("MAVEN_CENTRAL_GPG_PASSWORD")
+  )
+  sign publishing.publications.mavenJava
+}

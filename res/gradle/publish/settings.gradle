@@ -1,0 +1,9 @@
+apply plugin: "com.gradleup.nmcp.settings"
+
+nmcpSettings {
+  centralPortal {
+    username = System.getenv("MAVEN_CENTRAL_USERNAME")
+    password = System.getenv("MAVEN_CENTRAL_PASSWORD")
+    publishingType = System.getenv("MAVEN_CENTRAL__PUBLISH_TYPE") ? System.getenv("MAVEN_CENTRAL__PUBLISH_TYPE") : "AUTOMATIC"
+  }
+}

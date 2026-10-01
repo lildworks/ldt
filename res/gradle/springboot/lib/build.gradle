@@ -1,0 +1,7 @@
+jar {
+  exclude "**/application-*.properties"
+}
+
+bootJar {
+  enabled = false
+}

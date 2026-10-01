@@ -1,0 +1,3 @@
+javadoc {
+  destinationDir = file("${buildDir}/generated-docs")
+}
