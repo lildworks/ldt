@@ -1,0 +1,4 @@
+asciidoctor {
+  inputs.dir file("${buildDir}/generated-snippets")
+  dependsOn test
+}
