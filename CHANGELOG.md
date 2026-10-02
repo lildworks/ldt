@@ -1,3 +1,6 @@
+# REL: Version bumped to v1.0.0-BETA.261002 (2026-10-02)
+- FIX: Missing ldt springboot gradle sonar task proxy
+
 # REL: Version bumped to v1.0.1-BETA.261001 (2026-10-01)
 - HOTFIX: Available resources references for project tasks
 
