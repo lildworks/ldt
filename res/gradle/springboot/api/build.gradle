@@ -1,12 +1,23 @@
-jar {
-  exclude "**/application-*.properties"
+def defaultJarExcludes = ["**/application-*.properties"]
+
+afterEvaluate {
+  def extraJarExcludes = project.findProperty('jarExcludes') ?: []
+  def jarExcludes = (defaultJarExcludes + [extraJarExcludes].flatten()).collect { it.toString() }.unique()
+
+  jar {
+    exclude jarExcludes
+  }
+
+  bootJar {
+    exclude jarExcludes
+  }
 }
 
-bootJar {
-  exclude "**/application-*.properties"
+def appMainClass = provider {
+  (project.findProperty('mainClass') ?: "${project.group}.Application").toString()
 }
 
 bootRun {
   systemProperties = System.properties
-  mainClass = "${project.mainClass}"
+  mainClass.set(appMainClass)
 }
