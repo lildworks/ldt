@@ -6,7 +6,11 @@ bootJar {
   exclude "**/application-*.properties"
 }
 
+def appMainClass = provider {
+  (project.findProperty('mainClass') ?: "${project.group}.Application").toString()
+}
+
 bootRun {
   systemProperties = System.properties
-  mainClass = "${project.mainClass}"
+  mainClass.set(appMainClass)
 }
