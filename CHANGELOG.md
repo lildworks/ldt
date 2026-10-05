@@ -1,3 +1,10 @@
+# REL: Version bumped to v1.0.0-BETA.261005 (2026-10-05)
+- REFACT: Removed ldt wrapper - moved out into the ldt-wrapper project
+- FEAT: HTML_FOLDER build arg for nginx stable Dockerfile
+- FEAT: JAR_FILE build arg for jre21 alpine Dockerfile
+- FEAT: Exclude files afterEvaluate from jar file
+- FEAT: dynamic set mainClass property handler
+
 # REL: Version bumped to v1.0.0-BETA.261002 (2026-10-02)
 - FIX: Missing ldt springboot gradle sonar task proxy
 
