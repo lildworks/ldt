@@ -1,3 +1,6 @@
+# REL: Version bumped to v1.0.1-BETA.261013 (2026-10-13)
+- HOTFIX: Gradle sonar task dependsOn compileJava
+
 # REL: Version bumped to v1.0.0-BETA.261013 (2026-10-13)
 - REFACT: Readme 75 char line length
 - FIX: gradle sonar dependsOn compileJava
