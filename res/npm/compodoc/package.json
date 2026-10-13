@@ -1,0 +1,8 @@
+{
+    "scripts": {
+        "docs": "npx compodoc -p tsconfig.docs.json -d dist/docs/"
+    },
+    "devDependencies": {
+        "@compodoc/compodoc": "latest"
+    }
+}
