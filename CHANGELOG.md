@@ -1,3 +1,8 @@
+# REL: Version bumped to v1.0.0-BETA.261013 (2026-10-13)
+- REFACT: Readme 75 char line length
+- FIX: gradle sonar dependsOn compileJava
+- FEAT: npm compodoc support
+
 # REL: Version bumped to v1.0.0-BETA.261005 (2026-10-05)
 - REFACT: Removed ldt wrapper - moved out into the ldt-wrapper project
 - FEAT: HTML_FOLDER build arg for nginx stable Dockerfile
