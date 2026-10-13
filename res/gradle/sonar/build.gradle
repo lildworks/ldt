@@ -1,4 +1,5 @@
 sonar {
+  dependsOn compileJava
   properties {
     property "sonar.projectKey", "${project.name}"
     property "sonar.projectVersion", "${project.version}"
