@@ -357,6 +357,13 @@ gitscm() {
         fi
         cmd="exit"
     fi
+    if [ "$1" = "tag-latest" ]; then
+        git push --delete origin latest
+        git tag --delete latest
+        git tag latest
+        git push --tags
+        cmd="exit"
+    fi
 }
 webpack() {
     if [ "$LDT_DOCKER__CONTAINER_PORT" = "" ]; then LDT_DOCKER__CONTAINER_PORT=3000; fi
