@@ -1,0 +1,53 @@
+{
+    "_____git.settings_______________________________________________": "",
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "git.enabled": true,
+    "git.enableSmartCommit": true,
+    "git.pruneOnFetch": true,
+    "git-graph.dialog.fetchRemote.prune": true,
+    "git-graph.dialog.fetchRemote.pruneTags": true,
+    "git-graph.repository.fetchAndPrune": true,
+    "git-graph.repository.fetchAndPruneTags": true,
+    "scm.alwaysShowActions": true,
+    "scm.defaultViewMode": "tree",
+    "scm.repositories.selectionMode": "single",
+    "_____docker.settings____________________________________________": "",
+    "[dockerfile]": {
+        "editor.defaultFormatter": "ms-azuretools.vscode-containers"
+    },
+    "_____java.settings______________________________________________": "",
+    "java.compile.nullAnalysis.mode": "automatic",
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "redhat.telemetry.enabled": false,
+    "_____files.exludes______________________________________________": "",
+    "files.watcherExclude": {
+        "**/.classpath": true,
+        "**/.env": true,
+        "**/.factorypath": true,
+        "**/.git/**": true,
+        "**/.gradle/**": true,
+        "**/.ldt/**": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/bin/**": true,
+        "**/build/**": true,
+        "**/dist/**": true,
+        "**/target/**": true
+    },
+    "_____search.exludes______________________________________________": "",
+    "search.exclude": {
+        "**/.classpath": true,
+        "**/.env": true,
+        "**/.factorypath": true,
+        "**/.git/**": true,
+        "**/.gradle/**": true,
+        "**/.ldt/**": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/bin/**": true,
+        "**/build/**": true,
+        "**/dist/**": true,
+        "**/target/**": true
+    }
+}
