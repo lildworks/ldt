@@ -1,11 +1,11 @@
 FROM eclipse-temurin:21-jre-alpine
 
-ARG JAR_FILE=libs/application.jar
+ARG DIST=dist/libs/application.jar
 
 RUN apk update && \
     apk upgrade --no-cache
 
-COPY ./dist/${JAR_FILE} /srv/application.jar
+COPY ./${DIST} /srv/application.jar
 
 VOLUME [ "/srv/application.properties" ]
 

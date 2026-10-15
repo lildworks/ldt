@@ -1,0 +1,17 @@
+jacocoTestReport {
+  dependsOn test
+  reports {
+    xml.required = true;
+    html.required = true;
+  }
+}
+
+test { 
+  finalizedBy jacocoTestReport
+}
+
+sonar {
+  properties {
+    property "sonar.coverage.jacoco.xmlReportPaths", "${buildDir}/reports/jacoco/test/jacocoTestReport.xml"
+  }
+}

@@ -250,23 +250,47 @@ core() {
 }
 project() {
     if [ "$1" = ".dockerignore" ]; then
-        cp -fv $LDT__ROOT/../res/docker/.dockerignore $PWD/
+        cp -fv $LDT__ROOT/../res/docker/.dockerignore $PWD/.dockerignore
         cmd="exit"
     fi
     if [ "$1" = ".gitignore" ]; then
-        cp -fv $LDT__ROOT/../res/git/.gitignore $PWD/
+        cp -fv $LDT__ROOT/../res/git/.gitignore $PWD/.gitignore
         cmd="exit"
     fi
     if [ "$1" = ".npmignore" ]; then
-        cp -fv $LDT__ROOT/../res/npm/.npmignore $PWD/
+        cp -fv $LDT__ROOT/../res/npm/.npmignore $PWD/.npmignore
+        cmd="exit"
+    fi
+    if [ "$1" = ".vscode/settings.json" ]; then
+        mkdir -p $PWD/.vscode/
+        if [ -f $PWD/angular.json ]; then
+            cp -fv $LDT__ROOT/../res/vscode/anguboot/settings.json $PWD/.vscode/settings.json
+        fi
+        if [ -f $PWD/build.gradle ]; then
+            cp -fv $LDT__ROOT/../res/vscode/springboot/settings.json $PWD/.vscode/settings.json
+        fi
+        cmd="exit"
+    fi
+    if [ "$1" = "tsconfig.docs.json" ]; then
+        if [ -f $PWD/angular.json ]; then
+            cp -fv $LDT__ROOT/../res/npm/compodoc/tsconfig.docs.json $PWD/tsconfig.docs.json
+        fi
         cmd="exit"
     fi
     if [ "$1" = "Dockerfile" ]; then
+        if [ ! "$(ls src -al | grep index.html)" = "" ]; then
+            cp -fv $LDT__ROOT/../res/dockerfile/nginx/stable/Dockerfile $PWD/Dockerfile
+        fi
         if [ -f $PWD/angular.json ]; then
-            cp -fv $LDT__ROOT/../res/dockerfile/anguboot/nginx/stable/Dockerfile $PWD/
+            cp -fv $LDT__ROOT/../res/dockerfile/anguboot/nginx/stable/Dockerfile $PWD/Dockerfile
         fi
         if [ -f $PWD/build.gradle ]; then
-            cp -fv $LDT__ROOT/../res/dockerfile/springboot/jre21/Dockerfile $PWD/
+            if [ ! "$(java --version | grep openjdk\ 21)" = "" ]; then
+                cp -fv $LDT__ROOT/../res/dockerfile/springboot/jre21/Dockerfile $PWD/Dockerfile
+            fi
+            if [ ! "$(java --version | grep openjdk\ 25)" = "" ]; then
+                cp -fv $LDT__ROOT/../res/dockerfile/springboot/jre25/Dockerfile $PWD/Dockerfile
+            fi
         fi
         cmd="exit"
     fi

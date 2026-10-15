@@ -1,0 +1,45 @@
+{
+    "_____git.settings_______________________________________________": "",
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "git.enabled": true,
+    "git.enableSmartCommit": true,
+    "git.pruneOnFetch": true,
+    "git-graph.dialog.fetchRemote.prune": true,
+    "git-graph.dialog.fetchRemote.pruneTags": true,
+    "git-graph.repository.fetchAndPrune": true,
+    "git-graph.repository.fetchAndPruneTags": true,
+    "scm.alwaysShowActions": true,
+    "scm.defaultViewMode": "tree",
+    "scm.repositories.selectionMode": "single",
+    "_____docker.settings____________________________________________": "",
+    "[dockerfile]": {
+        "editor.defaultFormatter": "ms-azuretools.vscode-containers"
+    },
+    "_____files.exludes______________________________________________": "",
+    "files.watcherExclude": {
+        "**/.angular": true,
+        "**/.env": true,
+        "**/.git/**": true,
+        "**/.ldt/**": true,
+        "**/.node/**": true,
+        "**/.npm/**": true,
+        "**/dist/**": true,
+        "**/node_modules/**": true,
+        "**/npm-debug.log": true,
+        "**/package-lock.json": true
+    },
+    "_____search.exludes______________________________________________": "",
+    "search.exclude": {
+        "**/.angular": true,
+        "**/.env": true,
+        "**/.git/**": true,
+        "**/.ldt/**": true,
+        "**/.node/**": true,
+        "**/.npm/**": true,
+        "**/dist/**": true,
+        "**/node_modules/**": true,
+        "**/npm-debug.log": true,
+        "**/package-lock.json": true
+    }
+}

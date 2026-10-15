@@ -1,0 +1,13 @@
+{
+    "debug.console.wordWrap": false,
+    "editor.detectIndentation": false,
+    "editor.insertSpaces": true,
+    "editor.tabSize": 4,
+    "editor.wordWrap": "off",
+    "files.autoSave": "off",
+    "keyboard.dispatch": "keyCode",
+    "remote.autoForwardPorts": false,
+    "window.confirmBeforeClose": "never",
+    "workbench.colorTheme": "Dark Modern",
+    "workbench.startupEditor": "none"
+}
