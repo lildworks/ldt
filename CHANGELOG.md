@@ -1,3 +1,11 @@
+# REL: Version bumped to v1.0.1-BETA.261015 (2026-10-15)
+- FEAT: VSCode keybinding.json file created
+- FEAT: VSCode settings.json file created
+- FEAT: SpringBoot .vscode settings.json file created
+- FEAT: AnguBoot .vscode settings.json file created
+- FEAT: jdk25 Dockerfile support
+- FEAT: gradle jacoco build file
+
 # REL: Version bumped to v1.0.1-BETA.261013 (2026-10-13)
 - HOTFIX: Gradle sonar task dependsOn compileJava
 
