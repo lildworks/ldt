@@ -1,0 +1,8 @@
+apply plugin: "java"
+apply plugin: "jacoco"
+
+test {
+  outputs.dir file("${buildDir}/generated-snippets")
+  useJUnitPlatform()
+  finalizedBy jacocoTestReport
+}
