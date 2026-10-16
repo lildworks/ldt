@@ -280,7 +280,10 @@ project() {
     fi
     if [ "$1" = "Dockerfile" ]; then
         if [ ! "$(ls src -al | grep index.html)" = "" ]; then
-            cp -fv $LDT__ROOT/../res/dockerfile/nginx/stable/Dockerfile $PWD/Dockerfile
+            cp -fv $LDT__ROOT/../res/dockerfile/htmlboot/nginx/stable/Dockerfile $PWD/Dockerfile
+        fi
+        if [ ! "$(ls src -al | grep index.php)" = "" ]; then
+            cp -fv $LDT__ROOT/../res/dockerfile/phpboot/php/fpm/Dockerfile $PWD/Dockerfile
         fi
         if [ -f $PWD/angular.json ]; then
             cp -fv $LDT__ROOT/../res/dockerfile/anguboot/nginx/stable/Dockerfile $PWD/Dockerfile
