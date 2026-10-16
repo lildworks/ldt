@@ -1,0 +1,10 @@
+{
+    "/api": {
+        "target": "https://127.0.0.1:9080",
+        "secure": true,
+        "ws": true,
+        "pathRewrite": {
+            "^/api": ""
+        }
+    }
+}

@@ -1,3 +1,5 @@
+apply plugin: "java"
+
 task processProjectProperties {
   def outputDir = file("${buildDir}/generated-resources")
   outputs.file("${outputDir}/project.properties")

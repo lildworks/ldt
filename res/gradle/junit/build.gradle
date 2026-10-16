@@ -1,3 +1,5 @@
+apply plugin: "java"
+
 test {
   outputs.dir file("${buildDir}/generated-snippets")
   useJUnitPlatform()

@@ -1,7 +1,30 @@
+apply plugin: "java-library"
+apply plugin: "org.springframework.boot"
+apply plugin: "io.spring.dependency-management"
+
 jar {
   exclude "**/application-*.properties"
 }
 
 bootJar {
   enabled = false
+}
+
+task processProjectProperties {
+  def outputDir = file("${buildDir}/generated-resources")
+  outputs.file("${outputDir}/project.properties")
+  doLast {
+    outputDir.mkdirs()
+    def propsFile = new File(outputDir, "project.properties")
+    propsFile.text = ""
+      .concat("project.name=${project.name}\n")
+      .concat("project.version=${project.version}")
+  }
+}
+
+processResources {
+  dependsOn processProjectProperties
+  from("${buildDir}/generated-resources") {
+    include "project.properties"
+  }
 }

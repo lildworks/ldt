@@ -264,22 +264,26 @@ project() {
     if [ "$1" = ".vscode/settings.json" ]; then
         mkdir -p $PWD/.vscode/
         if [ -f $PWD/angular.json ]; then
-            cp -fv $LDT__ROOT/../res/vscode/anguboot/settings.json $PWD/.vscode/settings.json
+            cp -fv $LDT__ROOT/../res/ng/anguboot/.vscode/settings.json $PWD/.vscode/settings.json
         fi
         if [ -f $PWD/build.gradle ]; then
-            cp -fv $LDT__ROOT/../res/vscode/springboot/settings.json $PWD/.vscode/settings.json
+            cp -fv $LDT__ROOT/../res/gradle/springboot/.vscode/settings.json $PWD/.vscode/settings.json
         fi
         cmd="exit"
     fi
     if [ "$1" = "tsconfig.docs.json" ]; then
         if [ -f $PWD/angular.json ]; then
-            cp -fv $LDT__ROOT/../res/npm/compodoc/tsconfig.docs.json $PWD/tsconfig.docs.json
+            cp -fv $LDT__ROOT/../res/ng/anguboot/compodoc/package.json $PWD/package.docs.json
+            cp -fv $LDT__ROOT/../res/ng/anguboot/compodoc/tsconfig.docs.json $PWD/tsconfig.docs.json
         fi
         cmd="exit"
     fi
     if [ "$1" = "Dockerfile" ]; then
         if [ ! "$(ls src -al | grep index.html)" = "" ]; then
-            cp -fv $LDT__ROOT/../res/dockerfile/nginx/stable/Dockerfile $PWD/Dockerfile
+            cp -fv $LDT__ROOT/../res/dockerfile/htmlboot/nginx/stable/Dockerfile $PWD/Dockerfile
+        fi
+        if [ ! "$(ls src -al | grep index.php)" = "" ]; then
+            cp -fv $LDT__ROOT/../res/dockerfile/phpboot/php/fpm/Dockerfile $PWD/Dockerfile
         fi
         if [ -f $PWD/angular.json ]; then
             cp -fv $LDT__ROOT/../res/dockerfile/anguboot/nginx/stable/Dockerfile $PWD/Dockerfile
@@ -297,7 +301,7 @@ project() {
     if [ "$1" = "proxy-conf.json" ]; then
         if [ -f $PWD/angular.json ]; then
             mkdir -p $PWD/config/proxy/
-            cp -fv $LDT__ROOT/../res/ng/anguboot/proxy-conf.json.example $PWD/config/proxy/proxy-conf.json
+            cp -fv $LDT__ROOT/../res/ng/anguboot/http/ws/proxy-conf.json $PWD/config/proxy/proxy-conf.json
         fi
         cmd="exit"
     fi
@@ -355,6 +359,13 @@ gitscm() {
         if [ ! "$LDT__GITSCM_RELEASE_VERSION" = "" ]; then
             git checkout $LDT__GITSCM_RELEASE_VERSION
         fi
+        cmd="exit"
+    fi
+    if [ "$1" = "tag-latest" ]; then
+        git push --delete origin latest
+        git tag --delete latest
+        git tag latest
+        git push --tags
         cmd="exit"
     fi
 }
