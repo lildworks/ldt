@@ -1,3 +1,4 @@
+apply plugin: "java-library"
 apply plugin: "maven-publish"
 apply plugin: "signing"
 apply plugin: "com.gradleup.nmcp"

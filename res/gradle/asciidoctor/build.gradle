@@ -1,3 +1,5 @@
+apply plugin: "org.asciidoctor.jvm.convert"
+
 asciidoctor {
   inputs.dir file("${buildDir}/generated-snippets")
   dependsOn test
