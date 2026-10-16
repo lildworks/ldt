@@ -264,10 +264,10 @@ project() {
     if [ "$1" = ".vscode/settings.json" ]; then
         mkdir -p $PWD/.vscode/
         if [ -f $PWD/angular.json ]; then
-            cp -fv $LDT__ROOT/../res/vscode/anguboot/settings.json $PWD/.vscode/settings.json
+            cp -fv $LDT__ROOT/../res/ng/anguboot/.vscode/settings.json $PWD/.vscode/settings.json
         fi
         if [ -f $PWD/build.gradle ]; then
-            cp -fv $LDT__ROOT/../res/vscode/springboot/settings.json $PWD/.vscode/settings.json
+            cp -fv $LDT__ROOT/../res/gradle/springboot/.vscode/settings.json $PWD/.vscode/settings.json
         fi
         cmd="exit"
     fi
