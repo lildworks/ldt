@@ -1,7 +1,7 @@
 {
     "/api": {
-        "target": "http(s)://ipAddress_or_domain:portAddress",
-        "secure": false,
+        "target": "https://127.0.0.1:9080",
+        "secure": true,
         "ws": false,
         "pathRewrite": {
             "^/api": ""
