@@ -1,3 +1,16 @@
+# REL: Version bumped to v1.0.0-BETA.261016 (2026-10-16)
+- FEAT: Jacoco test reporter support for gradle projects
+- FIX: Missing apply gradle plugins for projects
+- FEAT: PhpBoot nginx config for projects
+- FEAT: AnguBoot nginx config for projects
+- FEAT: HtmlBoot nginx config for projects
+- FEAT: Angular https - ws proxy conf support for projects
+- REFACT: AnguBoot and SpringBoot vscode project settings
+- REFACT: Dockerize project by Dockerfile
+- FEAT: Angular http - ws proxy conf support for projects
+- FEAT: Angular compodoc support for projects
+- FEAT: Git tag latest upgrade task for gitscm
+
 # REL: Version bumped to v1.0.1-BETA.261015 (2026-10-15)
 - FEAT: VSCode keybinding.json file created
 - FEAT: VSCode settings.json file created
