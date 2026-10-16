@@ -273,7 +273,8 @@ project() {
     fi
     if [ "$1" = "tsconfig.docs.json" ]; then
         if [ -f $PWD/angular.json ]; then
-            cp -fv $LDT__ROOT/../res/npm/compodoc/tsconfig.docs.json $PWD/tsconfig.docs.json
+            cp -fv $LDT__ROOT/../res/ng/anguboot/compodoc/package.json $PWD/package.docs.json
+            cp -fv $LDT__ROOT/../res/ng/anguboot/compodoc/tsconfig.docs.json $PWD/tsconfig.docs.json
         fi
         cmd="exit"
     fi
@@ -297,7 +298,7 @@ project() {
     if [ "$1" = "proxy-conf.json" ]; then
         if [ -f $PWD/angular.json ]; then
             mkdir -p $PWD/config/proxy/
-            cp -fv $LDT__ROOT/../res/ng/anguboot/proxy-conf.json.example $PWD/config/proxy/proxy-conf.json
+            cp -fv $LDT__ROOT/../res/ng/anguboot/http/ws/proxy-conf.json $PWD/config/proxy/proxy-conf.json
         fi
         cmd="exit"
     fi
